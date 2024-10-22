@@ -1,16 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ielyatim <ielyatim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/22 09:17:55 by ielyatim          #+#    #+#             */
-/*   Updated: 2024/10/22 10:38:38 by ielyatim         ###   ########.fr       */
+/*   Created: 2024/10/22 14:19:22 by ielyatim          #+#    #+#             */
+/*   Updated: 2024/10/22 14:23:07 by ielyatim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	return (0 <= c && c <= 127);
+	while (*s != 0)
+		s++;
+	if (*s == c)
+		return ((char *)s);
+	s--;
+	while (*s != 0)
+	{
+		if (*s == c)
+			return ((char *)s);
+		s--;
+	}
+	return (0);
 }

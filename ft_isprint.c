@@ -6,11 +6,11 @@
 /*   By: ielyatim <ielyatim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 09:30:28 by ielyatim          #+#    #+#             */
-/*   Updated: 2024/10/22 09:32:18 by ielyatim         ###   ########.fr       */
+/*   Updated: 2024/10/22 10:38:27 by ielyatim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isprint(int c)
+int	ft_isprint(int c)
 {
-    return (32 <= c && c <= 126);
+	return (32 <= c && c <= 126);
 }
