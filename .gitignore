@@ -1,4 +1,4 @@
 *.md
-main.*
+main*
 *.out
 *.a

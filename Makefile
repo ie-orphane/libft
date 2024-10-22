@@ -1,5 +1,5 @@
 NAME = libft.a
-FILES := ft_*.c
+FILES := ft_toupper.c ft_tolower.c
 OBJECTS := $(FILES:.c=.o)
 
 all : $(NAME)
@@ -8,7 +8,7 @@ $(NAME) : $(OBJECTS)
 	ar -rs $(NAME) $(OBJECTS)
 
 %.o : %.c
-	cc -Wall -Wextra -Werror -c $< -o $@ -I $(NAME:.a=.h)
+	cc -Wall -Wextra -Werror -c $^ -o $@
 
 clean :
 	rm -f $(OBJECTS)
