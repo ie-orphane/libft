@@ -6,12 +6,12 @@
 /*   By: ielyatim <ielyatim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 09:05:25 by ielyatim          #+#    #+#             */
-/*   Updated: 2024/10/23 10:38:51 by ielyatim         ###   ########.fr       */
+/*   Updated: 2024/10/23 14:32:18 by ielyatim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIBFT_H
-# define FT_LIBFT_H
+#ifndef LIBFT_H
+# define LIBFT_H
 
 # include <stddef.h>
 
@@ -33,6 +33,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size);
 
 void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
-void *ft_memchr(const void *s, int c, size_t n);
+void	*ft_memchr(const void *s, int c, size_t n);
+
+int		ft_atoi(const char *nptr);
 
 #endif
