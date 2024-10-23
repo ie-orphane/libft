@@ -1,6 +1,5 @@
-*.md
-*.out
-*.a
-*.o
-
-main*
+*
+!.gitignore
+!ft_*.c
+!libft.h
+!Makefile
