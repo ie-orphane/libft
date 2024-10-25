@@ -6,7 +6,7 @@
 /*   By: ielyatim <ielyatim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 09:05:25 by ielyatim          #+#    #+#             */
-/*   Updated: 2024/10/24 14:10:00 by ielyatim         ###   ########.fr       */
+/*   Updated: 2024/10/25 09:57:44 by ielyatim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,9 @@ void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s1);
 
 int		ft_atoi(const char *nptr);
+
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(char const *s1, char const *set);
 
 #endif

@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ielyatim <ielyatim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/23 08:36:45 by ielyatim          #+#    #+#             */
-/*   Updated: 2024/10/25 18:54:09 by ielyatim         ###   ########.fr       */
+/*   Created: 2024/10/24 15:04:57 by ielyatim          #+#    #+#             */
+/*   Updated: 2024/10/24 15:40:46 by ielyatim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
+	char	*str;
 	size_t	i;
-	size_t	j;
-	size_t	dst_len;
-	size_t	src_len;
+	size_t	str_len;
 
-	dst_len = ft_strlen(dst);
-	src_len = ft_strlen(src);
-	j = 0;
-	i = dst_len;
-	if (size > dst_len + src_len)
+	str_len = ft_strlen(s);
+	if (start > str_len)
+		return (ft_strdup(""));
+	str = malloc((str_len - start) + 1);
+	if (str)
 	{
-		while (src[j] != '\0' && j < (size - dst_len - 1))
-			dst[i++] = src[j++];
-		dst[i] = '\0';
+		i = 0;
+		while (i < len && s[start])
+			str[i++] = s[start++];
+		str[i] = '\0';
 	}
-	return (src_len + dst_len);
+	return (str);
 }
