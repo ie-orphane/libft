@@ -1,24 +1,34 @@
 NAME = libft.a
-FILES := ft_bzero.c ft_toupper.c ft_tolower.c \
-		ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
-		ft_strlen.c ft_strchr.c ft_strrchr.c ft_strlcpy.c ft_strlcat.c \
-		ft_memset.c ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memchr.c \
-		ft_strncmp.c ft_strnstr.c ft_strdup.c ft_calloc.c ft_atoi.c \
-		ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c \
-		ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c \
-		ft_putendl_fd.c ft_putnbr_fd.c
-OBJECTS := $(FILES:.c=.o)
+
+FUNCTIONS := toupper tolower isalpha isdigit isalnum isascii isprint \
+		strlen strchr strrchr strlcpy strlcat strncmp strnstr strdup \
+		memset memcmp memcpy memmove memchr bzero calloc atoi \
+		substr strjoin strtrim strmapi striteri split itoa \
+		putchar_fd putstr_fd putendl_fd putnbr_fd
+
+SOURCES := $(shell printf "ft_%s.c\n" ${FUNCTIONS})
+
+OBJECTS := $(SOURCES:.c=.o)
+
+FUNCTIONS_BONUS := new add_front size add_back
+
+SOURCES_BONUS := $(shell printf "ft_lst%s_bonus.c\n" ${FUNCTIONS_BONUS})
+
+OBJECTS_BONUS := $(SOURCES_BONUS:.c=.o) 
 
 all : $(NAME)
 
 $(NAME) : $(OBJECTS)
 	ar -rs $(NAME) $(OBJECTS)
 
+bonus : $(OBJECTS_BONUS)
+	ar -rs $(NAME) $(OBJECTS_BONUS)
+
 %.o : %.c
 	cc -Wall -Wextra -Werror -c $^ -o $@
 
 clean :
-	rm -f $(OBJECTS)
+	rm -f $(OBJECTS) $(OBJECTS_BONUS)
 
 fclean : clean 
 	rm -f $(NAME)
