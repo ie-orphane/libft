@@ -10,7 +10,7 @@ SOURCES := $(shell printf "ft_%s.c\n" ${FUNCTIONS})
 
 OBJECTS := $(SOURCES:.c=.o)
 
-FUNCTIONS_BONUS := new add_front size add_back
+FUNCTIONS_BONUS := new add_front size add_back delone
 
 SOURCES_BONUS := $(shell printf "ft_lst%s_bonus.c\n" ${FUNCTIONS_BONUS})
 
