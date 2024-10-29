@@ -10,13 +10,18 @@ SOURCES := $(shell printf "ft_%s.c\n" ${FUNCTIONS})
 
 OBJECTS := $(SOURCES:.c=.o)
 
-FUNCTIONS_BONUS := new add_front size add_back delone
+FUNCTIONS_BONUS := new add_front size add_back delone clear iter map
 
 SOURCES_BONUS := $(shell printf "ft_lst%s_bonus.c\n" ${FUNCTIONS_BONUS})
 
-OBJECTS_BONUS := $(SOURCES_BONUS:.c=.o) 
+OBJECTS_BONUS := $(SOURCES_BONUS:.c=.o)
 
-all : $(NAME)
+all : bonus clean run
+
+run :
+	cc -Wall -Wextra -Werror part_3.c libft.a && ./a.out
+
+# all : $(NAME)
 
 $(NAME) : $(OBJECTS)
 	ar -rs $(NAME) $(OBJECTS)
