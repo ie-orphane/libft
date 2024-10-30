@@ -1,5 +1,8 @@
 NAME = libft.a
 
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
+
 FUNCTIONS := toupper tolower isalpha isdigit isalnum isascii isprint \
 		strlen strchr strrchr strlcpy strlcat strncmp strnstr strdup \
 		memset memcmp memcpy memmove memchr bzero calloc atoi \
@@ -16,26 +19,24 @@ SOURCES_BONUS := $(shell printf "ft_lst%s_bonus.c\n" ${FUNCTIONS_BONUS})
 
 OBJECTS_BONUS := $(SOURCES_BONUS:.c=.o)
 
-all : bonus clean run
 
-run :
-	cc -Wall -Wextra -Werror part_3.c libft.a && ./a.out
-
-# all : $(NAME)
+all : $(NAME)
 
 $(NAME) : $(OBJECTS)
-	ar -rs $(NAME) $(OBJECTS)
+	@ar -rcs $(NAME) $(OBJECTS)
 
 bonus : $(OBJECTS_BONUS)
-	ar -rs $(NAME) $(OBJECTS_BONUS)
-
-%.o : %.c
-	cc -Wall -Wextra -Werror -c $^ -o $@
+	@ar -rcs $(NAME) $(OBJECTS_BONUS)
 
 clean :
-	rm -f $(OBJECTS) $(OBJECTS_BONUS)
+	@rm -f $(OBJECTS) $(OBJECTS_BONUS)
 
 fclean : clean 
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re : fclean all
+
+test : all run
+
+run :
+	@cc -Wall -Wextra -Werror part_1.c libft.a && ./a.out

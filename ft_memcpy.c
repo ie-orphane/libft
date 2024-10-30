@@ -6,7 +6,7 @@
 /*   By: ielyatim <ielyatim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 08:26:06 by ielyatim          #+#    #+#             */
-/*   Updated: 2024/10/24 09:12:20 by ielyatim         ###   ########.fr       */
+/*   Updated: 2024/10/30 11:19:14 by ielyatim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,14 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	unsigned char	*dstr;
-	unsigned char	*srcr;
+	unsigned char	*dst_tmp;
+	unsigned char	*src_tmp;
 
-	if (src != 0 && dst != 0)
-	{
-		dstr = (unsigned char *)dst;
-		srcr = (unsigned char *)src;
-		while (n > 0)
-		{
-			*(dstr++) = *(srcr++);
-			n--;
-		}
-	}
+	if (!dst && !src)
+		return (NULL);
+	dst_tmp = (unsigned char *)dst;
+	src_tmp = (unsigned char *)src;
+	while (n-- > 0)
+		*(dst_tmp++) = *(src_tmp++);
 	return (dst);
 }
