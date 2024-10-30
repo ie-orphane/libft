@@ -6,22 +6,26 @@
 /*   By: ielyatim <ielyatim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 14:19:22 by ielyatim          #+#    #+#             */
-/*   Updated: 2024/10/22 14:23:07 by ielyatim         ###   ########.fr       */
+/*   Updated: 2024/10/30 18:22:08 by ielyatim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char	*ft_strrchr(const char *s, int c)
 {
-	while (*s != 0)
-		s++;
-	if (*s == c)
-		return ((char *)s);
-	s--;
-	while (*s != 0)
+	int i;
+	char *str;
+
+	i = 0;
+	str = NULL;
+	while (s[i])
 	{
-		if (*s == c)
-			return ((char *)s);
-		s--;
+		if (s[i] == c)
+			str = (char *)s + i;
+		i++;
 	}
-	return (0);
+	if (s[i] == c)
+		str = (char *)s + i;
+	return (str);
 }
