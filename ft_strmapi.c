@@ -6,7 +6,7 @@
 /*   By: ielyatim <ielyatim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 15:11:44 by ielyatim          #+#    #+#             */
-/*   Updated: 2024/10/27 17:47:58 by ielyatim         ###   ########.fr       */
+/*   Updated: 2024/10/31 14:51:56 by ielyatim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,19 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*str;
 	size_t	i;
 
+	if (!s || !f)
+		return (NULL);
 	str_len = ft_strlen(s);
 	str = malloc(str_len + 1);
-	i = 0;
-	while (i < str_len)
-	{
-		str[i] = f(i, s[i]);
-		i++;
+	if (str)
+	{	
+		i = 0;
+		while (i < str_len)
+		{
+			str[i] = f(i, s[i]);
+			i++;
+		}
+		str[i] = '\0';
 	}
-	str[i] = '\0';
 	return (str);
 }
