@@ -6,7 +6,7 @@
 /*   By: ielyatim <ielyatim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 18:06:13 by ielyatim          #+#    #+#             */
-/*   Updated: 2024/10/27 18:44:16 by ielyatim         ###   ########.fr       */
+/*   Updated: 2024/10/31 14:58:24 by ielyatim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	while (*s)
-		write(fd, s++, 1);
+	if (s)
+	{
+		while (*s)
+			write(fd, s++, 1);
+	}
 }
