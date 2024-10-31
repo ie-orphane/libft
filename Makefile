@@ -13,7 +13,7 @@ SOURCES := $(shell printf "ft_%s.c\n" ${FUNCTIONS})
 
 OBJECTS := $(SOURCES:.c=.o)
 
-FUNCTIONS_BONUS := new add_front size add_back delone clear iter map
+FUNCTIONS_BONUS := new add_front size last add_back delone clear iter map
 
 SOURCES_BONUS := $(shell printf "ft_lst%s_bonus.c\n" ${FUNCTIONS_BONUS})
 
