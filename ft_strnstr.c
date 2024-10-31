@@ -6,28 +6,17 @@
 /*   By: ielyatim <ielyatim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:05:25 by ielyatim          #+#    #+#             */
-/*   Updated: 2024/10/23 15:28:26 by ielyatim         ###   ########.fr       */
+/*   Updated: 2024/10/31 11:03:04 by ielyatim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-static int	ft_strncmp(const char *s1, const char *s2, size_t n)
-{
-	size_t	i;
-
-	if (n == 0)
-		return (0);
-	i = 0;
-	while (s1[i] && s2[i] && s1[i] == s2[i] && i < n - 1)
-		i++;
-	return (s1[i] - s2[i]);
-}
+#include "libft.h"
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	index;
 	size_t	substr_len;
+	size_t	count;
 	char	*str;
 	char	*substr;
 
@@ -36,12 +25,16 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	substr_len = 0;
 	while (substr[substr_len])
 		substr_len++;
-	if (substr_len == 0)
+	if (substr_len == 0 || len == 0)
 		return (str);
 	index = 0;
-	while (str[index] != '\0' && index < len)
+	while (str[index] && index < len)
 	{
-		if (ft_strncmp((str + index), substr, substr_len) == 0)
+		count = 0;
+		while (str[index + count] && substr[count] && str[index
+				+ count] == substr[count] && index + count < len)
+			count++;
+		if (count == substr_len)
 			return (str + index);
 		index++;
 	}
