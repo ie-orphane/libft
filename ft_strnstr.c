@@ -6,7 +6,7 @@
 /*   By: ielyatim <ielyatim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:05:25 by ielyatim          #+#    #+#             */
-/*   Updated: 2024/11/01 09:44:40 by ielyatim         ###   ########.fr       */
+/*   Updated: 2024/11/01 10:04:45 by ielyatim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	{
 		count = 0;
 		while (str[index + count] && substr[count] && str[index
-			+ count] == substr[count] && index + count < len)
+				+ count] == substr[count] && index + count < len)
 			count++;
 		if (count == substr_len)
 			return (str + index);

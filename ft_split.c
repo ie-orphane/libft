@@ -6,7 +6,7 @@
 /*   By: ielyatim <ielyatim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 20:20:13 by ielyatim          #+#    #+#             */
-/*   Updated: 2024/10/31 14:34:52 by ielyatim         ###   ########.fr       */
+/*   Updated: 2024/11/01 10:44:42 by ielyatim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ static int	ft_count_words(const char *str, char c)
 				i++;
 			words_count++;
 		}
-		i++;
+		if (str[i] != '\0')
+			i++;
 	}
 	return (words_count);
 }
