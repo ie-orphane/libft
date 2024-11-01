@@ -6,7 +6,7 @@
 /*   By: ielyatim <ielyatim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 20:20:13 by ielyatim          #+#    #+#             */
-/*   Updated: 2024/11/01 10:44:42 by ielyatim         ###   ########.fr       */
+/*   Updated: 2024/11/01 15:08:20 by ielyatim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,18 +41,17 @@ static char	*ft_walloc(const char *str, char c, size_t *i)
 	j = 0;
 	while (str[*i + j] != '\0' && str[*i + j] != c)
 		j++;
-	dest = malloc(j + 1);
-	if (dest)
+	dest = malloc((j + 1) * sizeof(char));
+	if (!dest)
+		return (NULL);
+	j = 0;
+	while (str[*i] != '\0' && str[*i] != c)
 	{
-		j = 0;
-		while (str[*i] != '\0' && str[*i] != c)
-		{
-			dest[j] = str[*i];
-			(*i)++;
-			j++;
-		}
-		dest[j] = '\0';
+		dest[j] = str[*i];
+		(*i)++;
+		j++;
 	}
+	dest[j] = '\0';
 	return (dest);
 }
 
@@ -60,9 +59,10 @@ char	**ft_free(char **arr, size_t count)
 {
 	while (count > 0)
 	{
-		free(arr[count]);
+		free(arr[count - 1]);
 		count--;
 	}
+	free(arr);
 	return (NULL);
 }
 
