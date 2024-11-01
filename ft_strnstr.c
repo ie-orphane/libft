@@ -6,7 +6,7 @@
 /*   By: ielyatim <ielyatim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:05:25 by ielyatim          #+#    #+#             */
-/*   Updated: 2024/10/31 11:03:04 by ielyatim         ###   ########.fr       */
+/*   Updated: 2024/11/01 09:44:40 by ielyatim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,17 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 	str = (char *)big;
 	substr = (char *)little;
-	substr_len = 0;
-	while (substr[substr_len])
-		substr_len++;
-	if (substr_len == 0 || len == 0)
+	substr_len = ft_strlen(little);
+	if (substr_len == 0)
 		return (str);
+	if (len <= 0)
+		return (0);
 	index = 0;
 	while (str[index] && index < len)
 	{
 		count = 0;
 		while (str[index + count] && substr[count] && str[index
-				+ count] == substr[count] && index + count < len)
+			+ count] == substr[count] && index + count < len)
 			count++;
 		if (count == substr_len)
 			return (str + index);
