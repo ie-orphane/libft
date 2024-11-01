@@ -6,7 +6,7 @@
 /*   By: ielyatim <ielyatim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 14:19:22 by ielyatim          #+#    #+#             */
-/*   Updated: 2024/10/30 18:22:08 by ielyatim         ###   ########.fr       */
+/*   Updated: 2024/11/01 09:52:43 by ielyatim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ char	*ft_strrchr(const char *s, int c)
 	str = NULL;
 	while (s[i])
 	{
-		if (s[i] == c)
+		if (s[i] == (unsigned char)c)
 			str = (char *)s + i;
 		i++;
 	}
-	if (s[i] == c)
+	if (s[i] == (unsigned char)c)
 		str = (char *)s + i;
 	return (str);
 }
