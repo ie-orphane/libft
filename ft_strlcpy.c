@@ -6,11 +6,11 @@
 /*   By: ielyatim <ielyatim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 08:35:44 by ielyatim          #+#    #+#             */
-/*   Updated: 2024/10/23 09:06:01 by ielyatim         ###   ########.fr       */
+/*   Updated: 2024/11/04 15:44:21 by ielyatim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {

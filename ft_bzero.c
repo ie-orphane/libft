@@ -6,11 +6,11 @@
 /*   By: ielyatim <ielyatim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 10:06:54 by ielyatim          #+#    #+#             */
-/*   Updated: 2024/10/23 13:59:50 by ielyatim         ###   ########.fr       */
+/*   Updated: 2024/11/04 15:42:34 by ielyatim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

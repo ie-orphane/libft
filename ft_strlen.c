@@ -6,11 +6,11 @@
 /*   By: ielyatim <ielyatim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:23:49 by ielyatim          #+#    #+#             */
-/*   Updated: 2024/10/22 10:38:01 by ielyatim         ###   ########.fr       */
+/*   Updated: 2024/11/04 15:44:29 by ielyatim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {
