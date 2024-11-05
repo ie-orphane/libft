@@ -6,7 +6,7 @@
 /*   By: ielyatim <ielyatim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 15:04:57 by ielyatim          #+#    #+#             */
-/*   Updated: 2024/11/01 10:01:09 by ielyatim         ###   ########.fr       */
+/*   Updated: 2024/11/05 10:37:51 by ielyatim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (start > str_len)
 		return (ft_strdup(""));
 	i = 0;
-	while (i < len && s[start + i] && i < str_len)
+	while (i < len && s[start + i])
 		i++;
 	str = malloc(i + 1);
 	if (str)
 	{
 		i = 0;
-		while (i < len && s[start] && i < str_len)
+		while (i < len && s[start])
 			str[i++] = s[start++];
 		str[i] = '\0';
 	}
