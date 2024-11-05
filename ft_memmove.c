@@ -6,7 +6,7 @@
 /*   By: ielyatim <ielyatim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 09:11:04 by ielyatim          #+#    #+#             */
-/*   Updated: 2024/10/30 11:20:47 by ielyatim         ###   ########.fr       */
+/*   Updated: 2024/11/05 10:48:50 by ielyatim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned char	*dst_tmp;
-	unsigned char	*src_tmp;
+	char	*dst_tmp;
+	char	*src_tmp;
 
 	if (!dst && !src)
 		return (NULL);
-	dst_tmp = (unsigned char *)dst;
-	src_tmp = (unsigned char *)src;
+	dst_tmp = (char *)dst;
+	src_tmp = (char *)src;
 	if (dst_tmp > src_tmp)
 	{
 		dst_tmp += len - 1;
